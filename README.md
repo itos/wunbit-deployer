@@ -1,1 +1,1 @@
-Wunbit Art Deployer
+Wunbit Deployer of Smart Contracts for NFTs Collection
