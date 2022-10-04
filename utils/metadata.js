@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-for(var i = 1; i <10; i++) {
+for(var i = 1; i <7501; i++) {
     var json = {}
     json.name = "Crazy Food #" + i;
     json.description = "Crazy Foods vol.1 is an epic collection of 7.500 art pieces. Each one represents the food variety this world has to offer. These foods will bring out your inner madness. Are you ready? This is Crazy Food #" + i;
@@ -10,23 +10,23 @@ for(var i = 1; i <10; i++) {
     json.attributes = [
         {
           "trait_type": "Background",
-          "value": "Sky Blue"
+          "value": "Default Background"
         },
         {
           "trait_type": "Eyes",
-          "value": "Two"
+          "value": "Default Eyes"
         },
         {
           "trait_type": "Feeling",
-          "value": "Crazy"
+          "value": "Default Feeling"
         },
         {
           "trait_type": "Flavor",
-          "value": "Salty"
+          "value": "Default Flavor"
         },
         {
           "trait_type": "Type",
-          "value": "Pickle"
+          "value": "Default Pickle"
         }
       ],
 
