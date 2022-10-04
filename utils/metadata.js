@@ -1,6 +1,10 @@
 var fs = require('fs');
 
-for(var i = 1; i <7501; i++) {
+Array.prototype.random = function () {
+  return this[Math.floor((Math.random()*this.length))];
+}
+
+for(var i = 1; i <5; i++) {
     var json = {}
     json.name = "Crazy Food #" + i;
     json.description = "Crazy Foods vol.1 is an epic collection of 7.500 art pieces. Each one represents the food variety this world has to offer. These foods will bring out your inner madness. Are you ready? This is Crazy Food #" + i;
@@ -18,7 +22,7 @@ for(var i = 1; i <7501; i++) {
         },
         {
           "trait_type": "Feeling",
-          "value": "Default Feeling"
+          "value": ['Acid','Bitter','Cool','Delicious','Hot','Meaty','Salty','Sour','Sweat','Tasty','Umami','Spicy'].random()
         },
         {
           "trait_type": "Flavor",
@@ -30,5 +34,5 @@ for(var i = 1; i <7501; i++) {
         }
       ],
 
-    fs.writeFileSync('' + i + '.json', JSON.stringify(json, null, 4));
+      fs.writeFileSync('' + i + '.json', JSON.stringify(json, null, 4));
 }
