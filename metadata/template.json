@@ -1,0 +1,29 @@
+{
+    "name":"Crazy Food #1",
+    "description":"Crazy Foods is an epic collection of 7.500 artpieces. Each one representing the food variety this world has to offer. These foods will bring out your inner madness. Are you ready? This is Crazy Food #1",
+    "image":"ipfs://bafybeibo6qdul5vgn45wjsffa4luspzmccz7dpuvcijwn4io4llzqiw47y/1.png",
+    "artist":"Wunbit",
+    "external_url": "https://wunbit.com",
+    "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Sky Blue"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "Two"
+        },
+        {
+          "trait_type": "Feeling",
+          "value": "Crazy"
+        },
+        {
+          "trait_type": "Flavor",
+          "value": "Salty"
+        },
+        {
+          "trait_type": "Type",
+          "value": "Pickle"
+        }
+      ]
+}
