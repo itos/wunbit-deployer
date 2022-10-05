@@ -3,8 +3,8 @@ pragma solidity ^0.8.15;
 
 import "erc721a/contracts/ERC721A.sol";
 
-contract MyNFT is ERC721A {
-    constructor() ERC721A("MyNFT", "MNFT") {}
+contract CrazyFoods is ERC721A {
+    constructor() ERC721A("Crazy Foods", "CZF") {}
 
     function mint(uint256 quantity) external payable {
         // `_mint`'s second argument now takes in a `quantity`, not a `tokenId`.
@@ -12,6 +12,6 @@ contract MyNFT is ERC721A {
     }
 
     function _baseURI() override internal view virtual returns (string memory) {
-        return "ipfs://bafybeifgxh2lo3jpx6xg2bl3wlnifgpahcdvmktl42jz7d7m7x7y6yap3i/";
+        return "ipfs://bafybeigyp5lnot5anf5va4n6labhlsls6wotptc7qzl3ky6l3ui5p4q3ce/0.json";
     }
 }

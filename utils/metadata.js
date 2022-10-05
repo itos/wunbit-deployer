@@ -34,10 +34,18 @@ for(i in attribute_label) {
     //console.log(attribute_type[i]);
 }
 
-for(var i = 1; i <11; i++) {
+for(var i = 1; i <2; i++) {
     var json = {}
-    json.name = "Crazy Food #" + [i-1];
-    json.description = "Crazy Foods vol.1 is an epic collection of 7.500 art pieces. Each one represents the food variety this world has to offer. These foods will bring out your inner madness. Are you ready? This is Crazy Food #" + [i-1];
+
+    cooking = attribute_cooking.random();
+    feeling = attribute_feeling.random();
+    flavor = attribute_flavor.random();
+    origin = attribute_origin.random();
+    food = attribute_food[i-1].trim('\r');
+    label = attribute_label.random();
+
+    json.name = flavor + ' ' + feeling + ' ' + food;
+    json.description = food + " obtained in a " + origin.toLowerCase() + " with a" + flavor.toLowerCase() + " flavor. " + "Is feeling " + feeling.toLowerCase() + " about being " + cooking.toLowerCase() + ".";
     json.image = "ipfs://bafybeicivtikjz7golnkvqhihfitps3gajhpqdixsb3ktfyji7xksspwym/" + [i-1] + ".png";
     json.artist = "Wunbit";
     json.external_url = "https://wunbit.com",
@@ -49,29 +57,29 @@ for(var i = 1; i <11; i++) {
         },
         {
           "trait_type": "Cooking",
-          "value": attribute_cooking.random()
+          "value": cooking
         },
         {
           "trait_type": "Feeling",
-          "value": attribute_feeling.random()
+          "value": feeling
         },
         {
           "trait_type": "Flavor",
-          "value": attribute_flavor.random()
+          "value": flavor
         },
         {
           "trait_type": "Origin",
-          "value": attribute_origin.random()
+          "value": origin
         },
         {
           "trait_type": "Food",
-          "value": attribute_food[i-1].trim('\r')
+          "value": food
         },
         {
           "trait_type": "Label",
-          "value": attribute_label.random()
+          "value": label
         }
       ],
 
-      fs.writeFileSync('' + i-1 + '.json', JSON.stringify(json, null, 4));
+      fs.writeFileSync('' + i-1 + '.json', JSON.stringify(json));
 }
