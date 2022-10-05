@@ -2,16 +2,35 @@
 pragma solidity ^0.8.15;
 
 import "erc721a/contracts/ERC721A.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract CrazyFoods is ERC721A {
-    constructor() ERC721A("Crazy Foods", "CZF") {}
+contract CrazyFoods is ERC721A, Ownable {
+
+    uint256 MAX_MINTS = 7500;
+    uint256 MAX_SUPPLY = 7500;
+    uint256 public mintRate = 0 ether;
+
+    string public baseURI = "ipfs://bafybeiae7q3my3mdav4sc6jjx4kxlfcdkwd242an6g6rxr5idicip4ju3u/";
+
+    constructor() ERC721A("Crazy Foods", "WUN") {}
 
     function mint(uint256 quantity) external payable {
         // `_mint`'s second argument now takes in a `quantity`, not a `tokenId`.
-        _mint(msg.sender, quantity);
+        require(quantity + _numberMinted(msg.sender) <= MAX_MINTS, "Exceeded the limit");
+        require(totalSupply() + quantity <= MAX_SUPPLY, "Not enough tokens left");
+        require(msg.value >= (mintRate * quantity), "Not enough ether sent");
+        _safeMint(msg.sender, quantity);
     }
 
-    function _baseURI() override internal view virtual returns (string memory) {
-        return "ipfs://bafybeigyp5lnot5anf5va4n6labhlsls6wotptc7qzl3ky6l3ui5p4q3ce/0.json";
+    function withdraw() external payable onlyOwner {
+        payable(owner()).transfer(address(this).balance);
+    }
+
+    function _baseURI() internal view override returns (string memory) {
+        return baseURI;
+    }
+
+    function setMintRate(uint256 _mintRate) public onlyOwner {
+        mintRate = _mintRate;
     }
 }
