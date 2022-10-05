@@ -34,18 +34,18 @@ for(i in attribute_label) {
     //console.log(attribute_type[i]);
 }
 
-for(var i = 1; i <2; i++) {
+for(var i = 1; i <11; i++) {
     var json = {}
 
-    cooking = attribute_cooking.random();
-    feeling = attribute_feeling.random();
-    flavor = attribute_flavor.random();
-    origin = attribute_origin.random();
+    cooking = attribute_cooking[i-1].trim('\r');
+    feeling = attribute_feeling[i-1].trim('\r');
+    flavor = attribute_flavor[i-1].trim('\r');
+    origin = attribute_origin[i-1].trim('\r');
     food = attribute_food[i-1].trim('\r');
-    label = attribute_label.random();
+    label = attribute_label[i-1].trim('\r');
 
     json.name = flavor + ' ' + feeling + ' ' + food;
-    json.description = food + " obtained in a " + origin.toLowerCase() + " with a" + flavor.toLowerCase() + " flavor. " + "Is feeling " + feeling.toLowerCase() + " about being " + cooking.toLowerCase() + ".";
+    json.description = food + " obtained in a " + origin.toLowerCase() + " with " + flavor.toLowerCase() + " flavor. " + "Is feeling " + feeling.toLowerCase() + " about being " + cooking.toLowerCase() + ".";
     json.image = "ipfs://bafybeicivtikjz7golnkvqhihfitps3gajhpqdixsb3ktfyji7xksspwym/" + [i-1] + ".png";
     json.artist = "Wunbit";
     json.external_url = "https://wunbit.com",
