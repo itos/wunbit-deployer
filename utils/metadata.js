@@ -34,7 +34,7 @@ for(i in attribute_label) {
     //console.log(attribute_type[i]);
 }
 
-for(var i = 1; i <11; i++) {
+for(var i = 1; i <7501; i++) {
     var json = {}
 
     cooking = attribute_cooking[i-1].trim('\r');
@@ -46,7 +46,7 @@ for(var i = 1; i <11; i++) {
 
     json.name = flavor + ' ' + feeling + ' ' + food;
     json.description = food + " obtained in a " + origin.toLowerCase() + " with " + flavor.toLowerCase() + " flavor. " + "Is feeling " + feeling.toLowerCase() + " about being " + cooking.toLowerCase() + ".";
-    json.image = "ipfs://bafybeicivtikjz7golnkvqhihfitps3gajhpqdixsb3ktfyji7xksspwym/" + [i-1] + ".png";
+    json.image = "ipfs://bafybeidbsp2vg4tl6orq2zlwjdyocjwja4r3fxjx4mnjfxwflolj6rqjnu/" + [i-1] + ".png";
     json.artist = "Wunbit";
     json.external_url = "https://wunbit.com",
     json.attributes = [
