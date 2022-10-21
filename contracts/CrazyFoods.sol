@@ -10,7 +10,7 @@ contract CrazyFoods is ERC721A, Ownable {
     uint256 MAX_SUPPLY = 7500;
     uint256 public mintRate = 0 ether;
 
-    string public baseURI = "ipfs://bafybeiae7q3my3mdav4sc6jjx4kxlfcdkwd242an6g6rxr5idicip4ju3u/";
+    string public baseURI = "ipfs://bafybeigpkdiphsaonv6hi4w4tyzlaufxn6jrowm7zc3o6vakvwlp7kdopi/";
 
     constructor() ERC721A("Crazy Foods", "WUN") {}
 
